@@ -109,15 +109,30 @@ console.assert(cat.growl() === "meow");
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
+var KeepSecret = (function() {
+
+  var secretWord;
+
+  function KeepSecret(secret) {
+    secretWord = secret;
+  }
+
+  KeepSecret.prototype.squeal = function() {
+    return secretWord;
+  }
+
+  return KeepSecret;
+
+})();
 
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
 
-//**var mySecret = "My class rocks!";
-//**var dontTellNobody = new KeepSecret(mySecret);
-//**console.assert(dontTellNobody.squeal() === mySecret);
+var mySecret = "My class rocks!";
+var dontTellNobody = new KeepSecret(mySecret);
+console.assert(dontTellNobody.squeal() === mySecret);
 
 // --------------------------------------------------------------- //
 
