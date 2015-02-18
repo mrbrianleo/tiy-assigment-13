@@ -157,9 +157,9 @@ console.assert(dontTellNobody.squeal() === mySecret);
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
-function Key() {
+(function Key() {
 
-}
+})();
 
 var Safe = (function() {
   var safeData;
@@ -214,16 +214,34 @@ console.assert(safe.unlock(rightKey) === sensitive);
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
+var Validator = (function() {
 
+  function Validator() {
+
+  }
+
+  var emailAddress;
+
+  Validator.prototype.email = function(string) {
+    emailAddress = string;
+
+    if (emailAddress.indexOf("@") >0) {
+      return emailAddress;
+    } 
+  };
+
+  return Validator;
+
+})();
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
 
-//**if (typeof Validator === "function") {
-//**  var valid = new Validator();
-//**  console.assert(valid.email("name@theironyard.com"));
-//**  console.assert(!valid.email("name-at-theironyard.com"));
-//**}
+if (typeof Validator === "function") {
+  var valid = new Validator();
+  console.assert(valid.email("name@theironyard.com"));
+  console.assert(!valid.email("name-at-theironyard.com"));
+}
 
 // --------------------------------------------------------------- //
