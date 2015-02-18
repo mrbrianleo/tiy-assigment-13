@@ -30,6 +30,11 @@
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
+function Foo() {
+
+}
+
+var foo = new Foo();
 
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
@@ -57,7 +62,7 @@ console.assert(foo instanceof Foo);
 
 // ==== Validating =============================================== //
 
-console.assert(new Dog().says === "life is ruff");
+//**console.assert(new Dog().says === "life is ruff");
 
 // --------------------------------------------------------------- //
 
@@ -78,8 +83,8 @@ console.assert(new Dog().says === "life is ruff");
 
 // ==== Validating =============================================== //
 
-console.assert(cat instanceof Cat);
-console.assert(cat.growl() === "meow");
+//**console.assert(cat instanceof Cat);
+//**console.assert(cat.growl() === "meow");
 
 // --------------------------------------------------------------- //
 
@@ -101,9 +106,9 @@ console.assert(cat.growl() === "meow");
 
 // ==== Validating =============================================== //
 
-var mySecret = "My class rocks!";
-var dontTellNobody = new KeepSecret(mySecret);
-console.assert(dontTellNobody.squeal() === mySecret);
+//**var mySecret = "My class rocks!";
+//**var dontTellNobody = new KeepSecret(mySecret);
+//**console.assert(dontTellNobody.squeal() === mySecret);
 
 // --------------------------------------------------------------- //
 
@@ -130,13 +135,13 @@ console.assert(dontTellNobody.squeal() === mySecret);
 
 // ==== Validating =============================================== //
 
-var sensitive = "shhhhh!";
-var rightKey  = new Key();
-var wrongKey  = new Key();
-var safe      = new Safe(sensitive, rightKey);
+//**var sensitive = "shhhhh!";
+//**var rightKey  = new Key();
+//**var wrongKey  = new Key();
+//**var safe      = new Safe(sensitive, rightKey);
 
-console.assert(safe.unlock(wrongKey) !== sensitive);
-console.assert(safe.unlock(rightKey) === sensitive);
+//**console.assert(safe.unlock(wrongKey) !== sensitive);
+//**console.assert(safe.unlock(rightKey) === sensitive);
 
 // --------------------------------------------------------------- //
 
@@ -166,10 +171,10 @@ console.assert(safe.unlock(rightKey) === sensitive);
 
 // ==== Validating =============================================== //
 
-if (typeof Validator === "function") {
-  var valid = new Validator();
-  console.assert(valid.email("name@theironyard.com"));
-  console.assert(!valid.email("name-at-theironyard.com"));
-}
+//**if (typeof Validator === "function") {
+//**  var valid = new Validator();
+//**  console.assert(valid.email("name@theironyard.com"));
+//**  console.assert(!valid.email("name-at-theironyard.com"));
+//**}
 
 // --------------------------------------------------------------- //
