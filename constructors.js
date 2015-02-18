@@ -125,7 +125,6 @@ var KeepSecret = (function() {
 
 })();
 
-
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
@@ -159,10 +158,10 @@ console.assert(dontTellNobody.squeal() === mySecret);
 
 // ==== Validating =============================================== //
 
-//**var sensitive = "shhhhh!";
-//**var rightKey  = new Key();
-//**var wrongKey  = new Key();
-//**var safe      = new Safe(sensitive, rightKey);
+**var sensitive = "shhhhh!";
+**var rightKey  = new Key();
+**var wrongKey  = new Key();
+**var safe      = new Safe(sensitive, rightKey);
 
 //**console.assert(safe.unlock(wrongKey) !== sensitive);
 //**console.assert(safe.unlock(rightKey) === sensitive);
