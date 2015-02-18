@@ -84,9 +84,9 @@ function Cat() {
 }
 Cat.prototype.growl = function() {
   return "meow";
-}
+};
 
-var cat = new Cat;
+var cat = new Cat();
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
@@ -119,7 +119,7 @@ var KeepSecret = (function() {
 
   KeepSecret.prototype.squeal = function() {
     return secretWord;
-  }
+  };
 
   return KeepSecret;
 
@@ -141,30 +141,56 @@ console.assert(dontTellNobody.squeal() === mySecret);
 // 5. ------------------------------------------------------------ //
 
 // Create a constructor called `Key`. Create another constructor
-// called `Safe`. Make the Safe constructor take 2 arguments. The
+// called `Safe`. Make the Safe constructor take 2 arguments. 
+
+// The
 // first argument can be any piece if data to keep safe. This must
 // be stored using a private variable like you did with KeepSecret.
+
 // The 2nd param to the `Safe` constructor needs to be an instance
-// of `Key` you need to store it privately as well. Add a function
+// of `Key` you need to store it privately as well. 
+
+// Add a function
 // to the Safe prototype called `unlock` that accepts a key. If the
 // key matches the key that was used to create the Safe; then return
 // the secret data.
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
+function Key() {
 
+}
+
+var Safe = (function() {
+  var safeData;
+  var safeKey;
+
+  function Safe(data, key) {
+    safeData = data;
+    safeKey = key;
+  }
+
+  Safe.prototype.unlock = function(key) {
+    if (key === safeKey) {
+      return safeData;
+    } 
+  };
+
+  return Safe;
+
+})();
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
 
-**var sensitive = "shhhhh!";
-**var rightKey  = new Key();
-**var wrongKey  = new Key();
-**var safe      = new Safe(sensitive, rightKey);
+var sensitive = "shhhhh!";
+var rightKey  = new Key();
+var wrongKey  = new Key();
+var safe      = new Safe(sensitive, rightKey);
 
-//**console.assert(safe.unlock(wrongKey) !== sensitive);
-//**console.assert(safe.unlock(rightKey) === sensitive);
+console.assert(safe.unlock(wrongKey) !== sensitive);
+console.assert(safe.unlock(rightKey) === sensitive);
 
 // --------------------------------------------------------------- //
 
