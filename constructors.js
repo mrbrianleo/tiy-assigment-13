@@ -157,8 +157,13 @@ console.assert(dontTellNobody.squeal() === mySecret);
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
-(function Key() {
+var Key = (function() {
 
+  function Key() {
+
+  }
+
+  return Key;
 })();
 
 var Safe = (function() {
