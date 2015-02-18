@@ -175,8 +175,8 @@ var Safe = (function() {
     safeKey = key;
   }
 
-  Safe.prototype.unlock = function(key) {
-    if (key === safeKey) {
+  Safe.prototype.unlock = function(unlockKey) {
+    if (unlockKey === safeKey) {
       return safeData;
     } 
   };
