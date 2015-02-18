@@ -56,13 +56,15 @@ console.assert(foo instanceof Foo);
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
-
+function Dog() {
+  this.says = "life is ruff";
+}
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
 
-//**console.assert(new Dog().says === "life is ruff");
+console.assert(new Dog().says === "life is ruff");
 
 // --------------------------------------------------------------- //
 
@@ -83,8 +85,8 @@ console.assert(foo instanceof Foo);
 
 // ==== Validating =============================================== //
 
-//**console.assert(cat instanceof Cat);
-//**console.assert(cat.growl() === "meow");
+console.assert(cat instanceof Cat);
+console.assert(cat.growl() === "meow");
 
 // --------------------------------------------------------------- //
 
