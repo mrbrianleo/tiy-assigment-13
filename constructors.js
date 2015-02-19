@@ -229,10 +229,12 @@ var Validator = (function() {
 
   Validator.prototype.email = function(string) {
     emailAddress = string;
+    var atIndex = emailAddress.indexOf("@");
+    var dotIndex = emailAddress.indexOf(".");
 
-    if (emailAddress.indexOf("@") >0) {
+    if (atIndex > 0 && dotIndex > atIndex) {
       return emailAddress;
-    } 
+    }
   };
 
   return Validator;
